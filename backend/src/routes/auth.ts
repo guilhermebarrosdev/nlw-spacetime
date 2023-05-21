@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { FastifyInstance } from 'fastify'
+import axios from 'axios'
 import { z } from 'zod'
 import { prisma } from '../lib/prisma'
 
@@ -16,9 +16,9 @@ export async function authRoutes(app: FastifyInstance) {
       null,
       {
         params: {
-          code,
           client_id: process.env.GITHUB_CLIENT_ID,
           client_secret: process.env.GITHUB_CLIENT_SECRET,
+          code,
         },
         headers: {
           Accept: 'application/json',
@@ -71,6 +71,8 @@ export async function authRoutes(app: FastifyInstance) {
       },
     )
 
-    return { token }
+    return {
+      token,
+    }
   })
 }
