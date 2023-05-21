@@ -1,9 +1,14 @@
+import { cookies } from 'next/headers'
+
 import { Copyright } from '@/components/Copyright'
 import { EmptyMemories } from '@/components/EmptyMemories'
 import { Hero } from '@/components/Hero'
 import { SingIn } from '@/components/SingIn'
+import { Profile } from '@/components/Profile'
 
 export default function Home() {
+  const isAuthenticated = cookies().has('token')
+
   return (
     <main className="grid min-h-screen grid-cols-2">
       {/* Left */}
@@ -14,7 +19,7 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        <SingIn />
+        {isAuthenticated ? <Profile /> : <SingIn />}
 
         <Hero />
 
