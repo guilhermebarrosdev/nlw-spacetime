@@ -25,7 +25,7 @@ const discovery = {
   authorizationEndpoint: 'https://github.com/login/oauth/authorize',
   tokenEndpoint: 'https://github.com/login/oauth/access_token',
   revocationEndpoint:
-    'https://github.com/settings/connections/applications/d26f194cc5d5132a51be',
+    'https://github.com/settings/connections/applications/4b643aa461985902250e',
 }
 
 export default function App() {
@@ -37,7 +37,7 @@ export default function App() {
     BaiJamjuree_700Bold,
   })
 
-  const [response, signInWithGithub] = useAuthRequest(
+  const [, response, signInWithGithub] = useAuthRequest(
     {
       clientId: '4b643aa461985902250e',
       scopes: ['identity'],
