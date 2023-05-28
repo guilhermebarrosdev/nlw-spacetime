@@ -5,8 +5,11 @@ import jwt from '@fastify/jwt'
 import cors from '@fastify/cors'
 import { memoriesRoutes } from './routes/memories'
 import { authRoutes } from './routes/auth'
+import { uploadRoutes } from './routes/upload'
 
 const app = fastify()
+
+app.register(require('@fastify/multipart'))
 
 app.register(cors, {
   origin: true, // Recomendado por apenas URLS especificas
@@ -17,6 +20,7 @@ app.register(jwt, {
 })
 
 app.register(authRoutes)
+app.register(uploadRoutes)
 app.register(memoriesRoutes)
 
 app
