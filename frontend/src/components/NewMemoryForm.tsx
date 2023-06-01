@@ -17,7 +17,7 @@ export function NewMemoryForm() {
 
     const fileToUpload = formData.get('coverUrl')
 
-    const coverUrl = ''
+    let coverUrl = ''
 
     if (fileToUpload) {
       const uploadFormData = new FormData()
@@ -43,6 +43,8 @@ export function NewMemoryForm() {
         },
       },
     )
+
+    router.push('/')
   }
 
   return (
