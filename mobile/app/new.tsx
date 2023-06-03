@@ -16,7 +16,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
 
+  const [content, setContent] = useState('')
   const [isPublic, setIsPublic] = useState(false)
+
+  function handleCreateMemory() {
+    console.log(content, isPublic)
+  }
 
   return (
     <ScrollView
@@ -60,6 +65,8 @@ export default function NewMemory() {
 
         <TextInput
           multiline
+          value={content}
+          onChangeText={setContent}
           className="p-0 font-body text-lg text-gray-50"
           placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
           placeholderTextColor="#56565A"
@@ -67,6 +74,7 @@ export default function NewMemory() {
 
         <TouchableOpacity
           activeOpacity={0.7}
+          onPress={handleCreateMemory}
           className="items-center self-end rounded-full bg-green-500 px-5 py-2"
         >
           <Text className="font-alt text-sm uppercase text-black">SALVAR</Text>
