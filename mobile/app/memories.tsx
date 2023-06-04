@@ -1,10 +1,18 @@
-import { TouchableOpacity, View, ScrollView } from 'react-native'
+import {
+  TouchableOpacity,
+  View,
+  ScrollView,
+  Image,
+  Text,
+  Text,
+} from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 
 import NLWLogo from '../src/assets/nlw-spacetime-logo.svg'
 import { Link, useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import * as SecureStore from 'expo-secure-store'
+import React from 'react'
 
 export default function NewMemory() {
   const { bottom, top } = useSafeAreaInsets()
@@ -18,7 +26,7 @@ export default function NewMemory() {
 
   return (
     <ScrollView
-      className="flex-1 px-8"
+      className="flex-1"
       contentContainerStyle={{ paddingBottom: bottom, paddingTop: top }}
     >
       <View className="mt-4 flex-row items-center justify-between">
@@ -37,6 +45,19 @@ export default function NewMemory() {
               <AntDesign name="plus" size={16} color="#000" />
             </TouchableOpacity>
           </Link>
+        </View>
+      </View>
+
+      <View className="mt-6 space-y-10">
+        <View className="space-y-4">
+          <Text>12 de abril, 2023</Text>
+          <View className="space-y-4 px-8">
+            <Image
+              source={{}}
+              className="aspect-video w-full rounded-lg"
+              alt=""
+            />
+          </View>
         </View>
       </View>
     </ScrollView>
