@@ -57,6 +57,7 @@ export default function NewMemory() {
               className="aspect-video w-full rounded-lg"
               alt=""
             />
+            <Text className="font-body text-base leading-relaxed text-gray-100"></Text>
           </View>
         </View>
       </View>
