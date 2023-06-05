@@ -1,11 +1,4 @@
-import {
-  TouchableOpacity,
-  View,
-  ScrollView,
-  Image,
-  Text,
-  Text,
-} from 'react-native'
+import { TouchableOpacity, View, ScrollView, Image, Text } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 
 import NLWLogo from '../src/assets/nlw-spacetime-logo.svg'
