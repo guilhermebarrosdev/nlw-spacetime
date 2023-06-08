@@ -7,8 +7,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import * as SecureStore from 'expo-secure-store'
 import React, { useEffect, useState } from 'react'
 import { api } from '../src/lib/api'
+import dayjs from 'dayjs'
+import ptBr from 'dayjs/locale/pt-br'
+
+dayjs.locale(ptBr)
 
 interface Memory {
+  createdAt: string
   coverUrl: string
   excerpt: string
   id: string
@@ -72,7 +77,7 @@ export default function NewMemory() {
               <View className="flex-row items-center gap-2">
                 <View className="h-px w-5 bg-gray-50" />
                 <Text className="font-body text-sm text-gray-100">
-                  12 de abril, 2023
+                  {dayjs(memory.createdAt).format('D[de ]MMMM[, ]YYYY')}
                 </Text>
               </View>
               <View className="space-y-4 px-8">
