@@ -77,7 +77,7 @@ export default function NewMemory() {
               <View className="flex-row items-center gap-2">
                 <View className="h-px w-5 bg-gray-50" />
                 <Text className="font-body text-sm text-gray-100">
-                  {dayjs(memory.createdAt).format('D[de ]MMMM[, ]YYYY')}
+                  {dayjs(memory.createdAt).format('D[ de ]MMMM[, ]YYYY')}
                 </Text>
               </View>
               <View className="space-y-4 px-8">
